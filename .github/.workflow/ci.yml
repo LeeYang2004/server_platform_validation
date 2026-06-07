@@ -1,0 +1,24 @@
+# .github/workflows/ci.yml
+name: ServerBench CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install pytest psutil click jinja2 pyyaml
+      - name: Run unit tests
+        run: pytest tests/ -v --tb=short
+      - name: Run quick benchmark
+        run: python cli.py --workload db --duration 10 --output reports/ci_report.html
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-report
+          path: reports/

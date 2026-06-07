@@ -1,0 +1,8 @@
+thresholds:
+  cpu_max_pct: 90.0
+  latency_p99_ms: 30.0
+  cache_hit_rate_min: 65.0
+
+workloads:
+  default_duration_sec: 30
+  warmup_sec: 5

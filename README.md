@@ -9,11 +9,11 @@ Automated Server Benchmarking & Regression Testing Framework
 * Generates HTML reports for CI visibility
 * Fully CI/CD compatible via GitHub Actions
 
-   # Architecture
-   1. Workload Layer: Simulate `DatabaseWorkload` and `KeystoreWorkload`
-   2. Monitoring Layer: Capture `CPU utilization (%)`, `Memory usage (GB)`, `CPU frequency (MHz)`
-   3. Regression Analysis Layer: Compare runtime metrics against predefined thresholds
-   4. Reporting Layer: Generate an HTML report
+# Architecture
+1. Workload Layer: Simulate `DatabaseWorkload` and `KeystoreWorkload`
+2. Monitoring Layer: Capture `CPU utilization (%)`, `Memory usage (GB)`, `CPU frequency (MHz)`
+3. Regression Analysis Layer: Compare runtime metrics against predefined thresholds
+4. Reporting Layer: Generate an HTML report
 
 # CLI Usage
 Run all workloads

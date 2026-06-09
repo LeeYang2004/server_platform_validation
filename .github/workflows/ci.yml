@@ -28,7 +28,7 @@ jobs:
 
       # STEP 4: Execute all unit tests
       - name: Run unit tests
-        run: pytest tests/ -v --tb=short
+        run: PYTHONPATH=. pytest tests/ -v --tb=short
 
       # STEP 5: Execute a lightweight benchmark validation
       - name: Run quick benchmark

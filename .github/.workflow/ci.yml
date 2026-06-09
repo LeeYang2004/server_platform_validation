@@ -14,27 +14,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      # Step 1: Checkout repository code into the runner
+      # STEP 1: Checkout repository code into the runner
       - uses: actions/checkout@v4
 
-      # Step 2: Install and configure Python
+      # STEP 2: Install and configure Python
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      # Step 3: Install required project dependencies
+      # STEP 3: Install required project dependencies
       - name: Install dependencies
         run: pip install pytest psutil click jinja2 pyyaml
 
-      # Step 4: Execute all unit tests
+      # STEP 4: Execute all unit tests
       - name: Run unit tests
         run: pytest tests/ -v --tb=short
 
-      # Step 5: Execute a lightweight benchmark validation
+      # STEP 5: Execute a lightweight benchmark validation
       - name: Run quick benchmark
         run: python cli.py --workload db --duration 10 --output reports/ci_report.html
 
-      # Step 6: Upload generated report as a build artifact
+      # STEP 6: Upload generated report as a build artifact
       - name: Upload report
         uses: actions/upload-artifact@v4
         with:
